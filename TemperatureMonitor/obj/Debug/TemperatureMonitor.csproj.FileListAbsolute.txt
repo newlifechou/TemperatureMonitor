@@ -1,0 +1,10 @@
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\bin\Debug\TemperatureMonitor.exe
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\bin\Debug\TemperatureMonitor.pdb
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\bin\Debug\XSWindowFormControl.dll
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\bin\Debug\XSWindowFormControl.pdb
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.csprojResolveAssemblyReference.cache
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.Form1.resources
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.Properties.Resources.resources
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.csproj.GenerateResource.Cache
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.exe
+C:\Users\newli\Source\Repos\TemperatureMonitor\TemperatureMonitor\obj\Debug\TemperatureMonitor.pdb

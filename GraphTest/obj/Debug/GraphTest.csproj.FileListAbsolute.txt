@@ -1,0 +1,12 @@
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\bin\Debug\GraphTest.exe.config
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\bin\Debug\GraphTest.exe
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\bin\Debug\GraphTest.pdb
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.csprojResolveAssemblyReference.cache
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.Form1.resources
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.Properties.Resources.resources
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.csproj.GenerateResource.Cache
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.exe
+C:\Users\newli\Source\Repos\GraphTest\GraphTest\obj\Debug\GraphTest.pdb
+C:\Users\newli\Source\Repos\TemperatureMonitor\GraphTest\bin\Debug\GraphTest.exe.config
+C:\Users\newli\Source\Repos\TemperatureMonitor\GraphTest\obj\Debug\GraphTest.exe
+C:\Users\newli\Source\Repos\TemperatureMonitor\GraphTest\obj\Debug\GraphTest.pdb
