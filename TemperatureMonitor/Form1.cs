@@ -31,6 +31,8 @@ namespace TemperatureMonitor
             temperatureGraph3.MonitorPosition = "压头";
             temperatureGraph4.MachineName = "热压机D";
             temperatureGraph4.MonitorPosition = "底部右";
+
+            helper = new DataProcessHelper();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace TemperatureMonitor
             temperatureGraph4.SetCurrentTempareture(temperature4);
         }
 
+        private DataProcessHelper helper;
         private int start1;
         private int start2;
         private int start3;
