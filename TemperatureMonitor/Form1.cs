@@ -16,8 +16,8 @@ namespace TemperatureMonitor
             InitializeComponent();
             start1 = 0;
             start2 = 10;
-            start3 = 20;
-            start4 = 30;
+            start3 = 500;
+            start4 = 630;
             timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
@@ -35,11 +35,11 @@ namespace TemperatureMonitor
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            int temperature1 = GraphTest.RandDataFactory.GetRand(start1, 1);
-            int temperature2 = GraphTest.RandDataFactory.GetRand(start2, 2);
-            int temperature3 = GraphTest.RandDataFactory.GetRand(start3, 3);
-            int temperature4 = GraphTest.RandDataFactory.GetRand(start4, 4);
-            start1++; start2++; start3++; start4++;
+            int temperature1 = GraphTest.RandDataFactory.GetRand(start1, 4, true);
+            int temperature2 = GraphTest.RandDataFactory.GetRand(start2, 3, true);
+            int temperature3 = GraphTest.RandDataFactory.GetRand(start3, 3, false);
+            int temperature4 = GraphTest.RandDataFactory.GetRand(start4, 4, false);
+            start1++; start2++; start3--; start4--;
             temperatureGraph1.SetCurrentTempareture(temperature1);
             temperatureGraph2.SetCurrentTempareture(temperature2);
             temperatureGraph3.SetCurrentTempareture(temperature3);

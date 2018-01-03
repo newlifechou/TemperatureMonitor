@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txtMachine = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
@@ -41,18 +41,26 @@
             // 
             this.chartMain.BorderlineColor = System.Drawing.Color.Black;
             this.chartMain.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chartMain.ChartAreas.Add(chartArea4);
+            chartArea1.Area3DStyle.Inclination = 5;
+            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea1.AxisX.MinorGrid.Enabled = true;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea1.AxisY.MinorGrid.Enabled = true;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartMain.ChartAreas.Add(chartArea1);
             this.chartMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartMain.Location = new System.Drawing.Point(0, 0);
             this.chartMain.Name = "chartMain";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.IsVisibleInLegend = false;
-            series4.Name = "Series1";
-            this.chartMain.Series.Add(series4);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
+            series1.Name = "Series1";
+            this.chartMain.Series.Add(series1);
             this.chartMain.Size = new System.Drawing.Size(938, 678);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chart1";

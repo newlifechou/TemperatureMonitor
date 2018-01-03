@@ -8,15 +8,24 @@ namespace GraphTest
 {
     public static class RandDataFactory
     {
-        public static int GetRand(int val, int maxSpeed)
+        public static int GetRand(int val, int maxSpeed, bool isIncreased)
         {
             var rand = new Random();
-            int result = val + rand.Next(0, maxSpeed+1);
-            if (result > 200)
+
+            if (isIncreased)
+                val = val + rand.Next(-1, maxSpeed + 1);
+            else
+                val = val - rand.Next(-1, maxSpeed + 1);
+
+            if (val > 1000)
             {
-                result = 200;
+                val = 1000;
             }
-            return result;
+            if (val < 20)
+            {
+                val = 20;
+            }
+            return val;
         }
         public static int[] GetRandInt(int count)
         {
