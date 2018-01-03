@@ -1,6 +1,0 @@
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\bin\Debug\XSWindowFormControl.dll
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\bin\Debug\XSWindowFormControl.pdb
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\obj\Debug\XSWindowFormControl.TemperatureGraph.resources
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\obj\Debug\XSWindowFormControl.csproj.GenerateResource.Cache
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\obj\Debug\XSWindowFormControl.dll
-C:\Users\newli\Source\Repos\TemperatureMonitor\XSWindowFormControl\obj\Debug\XSWindowFormControl.pdb
