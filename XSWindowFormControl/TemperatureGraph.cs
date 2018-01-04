@@ -31,7 +31,6 @@ namespace XSWindowFormControl
             }
         }
         private int[] data;
-        private BindingSource bs;
         public void SetCurrentTempareture(int currentTemperature)
         {
             txtCurrentTemperature.Text = $"{currentTemperature}℃";

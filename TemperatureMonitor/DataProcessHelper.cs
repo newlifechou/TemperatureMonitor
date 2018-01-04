@@ -14,13 +14,14 @@ namespace TemperatureMonitor
             dir = Path.Combine(Environment.CurrentDirectory, "Data");
         }
 
-        public void WriteData(Temperature data, string machineName)
+        public void WriteData(string machineName, int data = 0)
         {
             try
             {
-                string filepath = Path.Combine(dir, $"{DateTime.Now.ToString("yyMMdd")}machineName");
+                var now = DateTime.Now;
+                string filepath = Path.Combine(dir, $"{now.ToString("yyMMdd")}{machineName}.txt");
                 StreamWriter sw = new StreamWriter(filepath, true);
-                string line = $"{data.RecordDate.ToString()},{data.Data}";
+                string line = $"{now.ToString("HHmmss")}={data}";
                 sw.WriteLine(line);
                 sw.Close();
             }

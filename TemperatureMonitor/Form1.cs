@@ -23,14 +23,14 @@ namespace TemperatureMonitor
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            temperatureGraph1.MachineName = "热压机A";
+            temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph2.MachineName = "热压机B";
+            temperatureGraph2.MachineName = "设备B";
             temperatureGraph2.MonitorPosition = "侧边";
-            temperatureGraph3.MachineName = "热压机C";
+            temperatureGraph3.MachineName = "设备C";
             temperatureGraph3.MonitorPosition = "压头";
-            temperatureGraph4.MachineName = "热压机D";
-            temperatureGraph4.MonitorPosition = "底部右";
+            temperatureGraph4.MachineName = "设备D";
+            temperatureGraph4.MonitorPosition = "底部";
 
             helper = new DataProcessHelper();
         }
@@ -46,6 +46,12 @@ namespace TemperatureMonitor
             temperatureGraph2.SetCurrentTempareture(temperature2);
             temperatureGraph3.SetCurrentTempareture(temperature3);
             temperatureGraph4.SetCurrentTempareture(temperature4);
+
+            //Write Log
+            helper.WriteData("A", temperature1);
+            helper.WriteData("B", temperature2);
+            helper.WriteData("C", temperature3);
+            helper.WriteData("D", temperature4);
         }
 
         private DataProcessHelper helper;

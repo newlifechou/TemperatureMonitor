@@ -68,6 +68,7 @@
             // txtMachine
             // 
             this.txtMachine.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.txtMachine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMachine.Font = new System.Drawing.Font("宋体", 20F);
             this.txtMachine.ForeColor = System.Drawing.Color.White;
             this.txtMachine.Location = new System.Drawing.Point(14, 15);
@@ -81,6 +82,7 @@
             // txtPosition
             // 
             this.txtPosition.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.txtPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPosition.Font = new System.Drawing.Font("宋体", 20F);
             this.txtPosition.ForeColor = System.Drawing.Color.White;
             this.txtPosition.Location = new System.Drawing.Point(182, 15);
@@ -94,6 +96,7 @@
             // txtCurrentTemperature
             // 
             this.txtCurrentTemperature.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtCurrentTemperature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCurrentTemperature.Font = new System.Drawing.Font("宋体", 20F);
             this.txtCurrentTemperature.ForeColor = System.Drawing.Color.White;
             this.txtCurrentTemperature.Location = new System.Drawing.Point(350, 15);
