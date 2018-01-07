@@ -13,8 +13,10 @@ namespace TestSerialPort
         public THData()
         {
             Temperature = Humidity = 0;
+            CurrentTime = DateTime.Now;
         }
         public double Temperature { get; set; }
         public double Humidity { get; set; }
+        public DateTime CurrentTime { get; set; }
     }
 }

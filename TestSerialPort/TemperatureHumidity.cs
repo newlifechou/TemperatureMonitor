@@ -9,15 +9,15 @@ namespace TestSerialPort
     /// <summary>
     /// 温湿度传感器操作类
     /// </summary>
-    public class OperationTemperatureHumidity
+    public class TemperatureHumidity
     {
         private SerialPort port;
 
-        public OperationTemperatureHumidity()
+        public TemperatureHumidity()
         {
 
         }
-        public OperationTemperatureHumidity(string portName)
+        public TemperatureHumidity(string portName)
         {
             SetSerialPort(portName);
         }
@@ -41,9 +41,9 @@ namespace TestSerialPort
 
                 port.Write(data, 0, data.Length);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine(ex.Message);
+                throw;
             }
         }
         public void Write(string hexString)
@@ -53,24 +53,42 @@ namespace TestSerialPort
                 byte[] data = SerialPortHelper.HexStringToBytes(hexString);
                 Write(data);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine(ex.Message);
+                throw;
             }
         }
 
         public string Read()
         {
-            byte[] data = Read(9);
-            string hexString = SerialPortHelper.BytesToHexString(data);
-            return hexString;
+            try
+            {
+                byte[] data = Read(9);
+                string hexString = SerialPortHelper.BytesToHexString(data);
+                return hexString;
+            }
+            catch 
+            {
+                throw;
+            }
+
         }
 
         public byte[] Read(int count)
         {
-            byte[] data = new byte[count];
-            port.Read(data, 0, count);
-            return data;
+            try
+            {
+                if (!port.IsOpen)
+                    port.Open();
+
+                byte[] data = new byte[count];
+                port.Read(data, 0, count);
+                return data;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
     }
