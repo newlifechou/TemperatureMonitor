@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSWindowFormControl", "XSWi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitor", "TemperatureMonitor\TemperatureMonitor.csproj", "{EB577775-3B8D-4F81-8C24-714A29BF6F07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerialPort", "TestSerialPort\TestSerialPort.csproj", "{1E6728EF-1995-46DC-8874-AD4E0DD520B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EB577775-3B8D-4F81-8C24-714A29BF6F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB577775-3B8D-4F81-8C24-714A29BF6F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB577775-3B8D-4F81-8C24-714A29BF6F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6728EF-1995-46DC-8874-AD4E0DD520B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6728EF-1995-46DC-8874-AD4E0DD520B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6728EF-1995-46DC-8874-AD4E0DD520B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6728EF-1995-46DC-8874-AD4E0DD520B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
