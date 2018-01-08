@@ -12,25 +12,8 @@ namespace TestSerialPort
     {
         static void Main(string[] args)
         {
-            var operation = new SerialPortOperate("COM5");
-            while (true)
-            {
-                //读取温湿度传感器的温度指令（未校验）
-                string readCmd = "010301F40002";
-                operation.Write(readCmd);
-                Thread.Sleep(2000);
-                string hexString = operation.Read();
-                string tempstr = hexString.Substring(6, 4);
-                string humistr = hexString.Substring(10, 4);
-                double temp = Convert.ToInt32(tempstr, 16) / 10.0;
-                double humi = Convert.ToInt32(humistr, 16) / 10.0;
-                THData d = new THData();
-                d.Temperature = temp;
-                d.Humidity = humi;
-                d.CurrentTime = DateTime.Now;
-
-                Console.WriteLine($"时间:{d.CurrentTime.ToString()} 温度:{d.Temperature}℃,湿度:{d.Humidity}%");
-            }
+            RealTest test = new RealTest();
+            test.TestTemperatureOnly();
             //Console.Read();
         }
     }

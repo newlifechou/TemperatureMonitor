@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISerialPort.cs" />
+    <Compile Include="RealTest.cs" />
     <Compile Include="SerialPortOperate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

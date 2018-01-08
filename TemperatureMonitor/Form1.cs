@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
+using TestSerialPort;
+using System.Threading.Tasks;
 
 namespace TemperatureMonitor
 {
@@ -14,51 +17,53 @@ namespace TemperatureMonitor
         public Form1()
         {
             InitializeComponent();
-            start1 = 0;
-            start2 = 10;
-            start3 = 500;
-            start4 = 630;
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Tick += Timer_Tick;
-            timer.Start();
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph2.MachineName = "设备B";
-            temperatureGraph2.MonitorPosition = "侧边";
-            temperatureGraph3.MachineName = "设备C";
-            temperatureGraph3.MonitorPosition = "压头";
-            temperatureGraph4.MachineName = "设备D";
-            temperatureGraph4.MonitorPosition = "底部";
+            temperatureGraph2.MachineName = "无";
+            temperatureGraph2.MonitorPosition = "无";
+            temperatureGraph3.MachineName = "无";
+            temperatureGraph3.MonitorPosition = "无";
+            temperatureGraph4.MachineName = "无";
+            temperatureGraph4.MonitorPosition = "无";
 
             helper = new DataProcessHelper();
+
+            Task.Factory.StartNew(StartTemperature1);
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            int temperature1 = GraphTest.RandDataFactory.GetRand(start1, 4, true);
-            int temperature2 = GraphTest.RandDataFactory.GetRand(start2, 3, true);
-            int temperature3 = GraphTest.RandDataFactory.GetRand(start3, 3, false);
-            int temperature4 = GraphTest.RandDataFactory.GetRand(start4, 4, false);
-            start1++; start2++; start3--; start4--;
-            temperatureGraph1.SetCurrentTempareture(temperature1);
-            temperatureGraph2.SetCurrentTempareture(temperature2);
-            temperatureGraph3.SetCurrentTempareture(temperature3);
-            temperatureGraph4.SetCurrentTempareture(temperature4);
 
-            //Write Log
-            helper.WriteData("A", temperature1);
-            helper.WriteData("B", temperature2);
-            helper.WriteData("C", temperature3);
-            helper.WriteData("D", temperature4);
+        public void StartTemperature1()
+        {
+            var operation = new SerialPortOperate("COM5");
+            while (true)
+            {
+                //读取温度传感器的温度指令（未校验）
+                string readCmd = "010303200004";
+                operation.Write(readCmd);
+                Thread.Sleep(2000);
+                string hexString = operation.Read();
+                string tempstr = hexString.Substring(6, 4);
+                double temp = Convert.ToInt32(tempstr, 16);
+                THData d = new THData();
+                d.Temperature = temp;
+                d.Humidity = 0;
+                //d.CurrentTime = DateTime.Now;
+
+                int temperature1 = (int)d.Temperature;
+                //update ui
+                this.Invoke(new Action(() =>
+                {
+                    temperatureGraph1.SetCurrentTempareture(temperature1);
+                }));
+
+
+                //Write Log
+                helper.WriteData("A", temperature1);
+            }
         }
 
         private DataProcessHelper helper;
-        private int start1;
-        private int start2;
-        private int start3;
-        private int start4;
-        private Timer timer;
+
     }
 }
