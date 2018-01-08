@@ -12,9 +12,10 @@ namespace TestSerialPort
     {
         static void Main(string[] args)
         {
-            var operation = new TemperatureHumidity("COM5");
+            var operation = new SerialPortOperate("COM5");
             while (true)
             {
+                //读取温湿度传感器的温度指令（未校验）
                 string readCmd = "010301F40002";
                 operation.Write(readCmd);
                 Thread.Sleep(2000);

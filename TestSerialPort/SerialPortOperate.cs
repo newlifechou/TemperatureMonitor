@@ -9,15 +9,15 @@ namespace TestSerialPort
     /// <summary>
     /// 温湿度传感器操作类
     /// </summary>
-    public class TemperatureHumidity
+    public class SerialPortOperate
     {
         private SerialPort port;
 
-        public TemperatureHumidity()
+        public SerialPortOperate()
         {
 
         }
-        public TemperatureHumidity(string portName)
+        public SerialPortOperate(string portName)
         {
             SetSerialPort(portName);
         }
@@ -32,6 +32,7 @@ namespace TestSerialPort
             port.StopBits = StopBits.One;
         }
 
+        #region 写入缓冲区
         public void Write(byte[] data)
         {
             try
@@ -58,7 +59,9 @@ namespace TestSerialPort
                 throw;
             }
         }
+        #endregion
 
+        #region 读取缓冲区
         public string Read()
         {
             try
@@ -67,7 +70,7 @@ namespace TestSerialPort
                 string hexString = SerialPortHelper.BytesToHexString(data);
                 return hexString;
             }
-            catch 
+            catch
             {
                 throw;
             }
@@ -90,6 +93,8 @@ namespace TestSerialPort
                 throw;
             }
         }
+        #endregion
+
 
     }
 }
