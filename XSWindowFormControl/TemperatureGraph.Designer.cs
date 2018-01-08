@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txtMachine = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtCurrentTemperature = new System.Windows.Forms.TextBox();
+            this.txtTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,26 +42,26 @@
             // 
             this.chartMain.BorderlineColor = System.Drawing.Color.Black;
             this.chartMain.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Area3DStyle.Inclination = 5;
-            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
-            chartArea1.AxisX.MinorGrid.Enabled = true;
-            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
-            chartArea1.AxisY.MinorGrid.Enabled = true;
-            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartMain.ChartAreas.Add(chartArea1);
+            chartArea2.Area3DStyle.Inclination = 5;
+            chartArea2.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea2.AxisX.MinorGrid.Enabled = true;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea2.AxisY.MinorGrid.Enabled = true;
+            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkOrange;
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartMain.ChartAreas.Add(chartArea2);
             this.chartMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartMain.Location = new System.Drawing.Point(0, 0);
             this.chartMain.Name = "chartMain";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsVisibleInLegend = false;
-            series1.Name = "Series1";
-            this.chartMain.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsVisibleInLegend = false;
+            series2.Name = "Series1";
+            this.chartMain.Series.Add(series2);
             this.chartMain.Size = new System.Drawing.Size(938, 678);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chart1";
@@ -107,11 +108,26 @@
             this.txtCurrentTemperature.Text = "温度";
             this.txtCurrentTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtTime
+            // 
+            this.txtTime.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTime.Font = new System.Drawing.Font("宋体", 20F);
+            this.txtTime.ForeColor = System.Drawing.Color.White;
+            this.txtTime.Location = new System.Drawing.Point(518, 15);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.ReadOnly = true;
+            this.txtTime.Size = new System.Drawing.Size(175, 46);
+            this.txtTime.TabIndex = 1;
+            this.txtTime.Text = "时间";
+            this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // TemperatureGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtCurrentTemperature);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtMachine);
@@ -130,5 +146,6 @@
         private System.Windows.Forms.TextBox txtMachine;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtCurrentTemperature;
+        private System.Windows.Forms.TextBox txtTime;
     }
 }

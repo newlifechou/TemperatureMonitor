@@ -20,15 +20,14 @@ namespace TemperatureMonitor
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph2.MachineName = "无";
-            temperatureGraph2.MonitorPosition = "无";
-            temperatureGraph3.MachineName = "无";
-            temperatureGraph3.MonitorPosition = "无";
-            temperatureGraph4.MachineName = "无";
-            temperatureGraph4.MonitorPosition = "无";
+            //temperatureGraph2.MachineName = "无";
+            //temperatureGraph2.MonitorPosition = "无";
+            //temperatureGraph3.MachineName = "无";
+            //temperatureGraph3.MonitorPosition = "无";
+            //temperatureGraph4.MachineName = "无";
+            //temperatureGraph4.MonitorPosition = "无";
 
             helper = new DataProcessHelper();
-
             Task.Factory.StartNew(StartTemperature1);
         }
 
@@ -54,7 +53,7 @@ namespace TemperatureMonitor
                 //update ui
                 this.Invoke(new Action(() =>
                 {
-                    temperatureGraph1.SetCurrentTempareture(temperature1);
+                    temperatureGraph1.SetCurrentTempareture(temperature1,d.CurrentTime);
                 }));
 
 

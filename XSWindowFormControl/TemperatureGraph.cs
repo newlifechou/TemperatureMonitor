@@ -31,9 +31,10 @@ namespace XSWindowFormControl
             }
         }
         private int[] data;
-        public void SetCurrentTempareture(int currentTemperature)
+        public void SetCurrentTempareture(int currentTemperature, DateTime recordTime)
         {
             txtCurrentTemperature.Text = $"{currentTemperature}℃";
+            txtTime.Text = recordTime.ToString("HH:mm:ss");
 
             for (int i = 0; i < data.Length - 1; i++)
             {
