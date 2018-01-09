@@ -14,7 +14,7 @@ namespace XSWindowFormControl
         public TemperatureGraph()
         {
             InitializeComponent();
-            data = new int[100];
+            data = new int[1000];
         }
         public string MachineName
         {

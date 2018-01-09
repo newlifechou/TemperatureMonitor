@@ -17,6 +17,7 @@ namespace TemperatureMonitor
         public Form1()
         {
             InitializeComponent();
+            this.FormClosing += Form1_FormClosing;
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
@@ -26,6 +27,11 @@ namespace TemperatureMonitor
             Task.Factory.StartNew(StartTemperature1);
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("你确定要关闭这个程序?", "确认?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            e.Cancel = (dr == DialogResult.No);
+        }
 
         public void StartTemperature1()
         {
@@ -69,5 +75,9 @@ namespace TemperatureMonitor
 
         private DataProcessHelper dataHelper;
 
+        private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
