@@ -11,10 +11,19 @@ namespace XSWindowFormControl
 {
     public partial class TemperatureGraph : UserControl
     {
+        private int[] data;
+
         public TemperatureGraph()
         {
             InitializeComponent();
-            data = new int[1000];
+            data = new int[50];
+        }
+        public int DataCount
+        {
+            set
+            {
+                data = new int[value];
+            }
         }
         public string MachineName
         {
@@ -30,19 +39,26 @@ namespace XSWindowFormControl
                 txtPosition.Text = value;
             }
         }
-        private int[] data;
+
         public void SetCurrentTempareture(int currentTemperature, DateTime recordTime)
         {
-            txtCurrentTemperature.Text = $"{currentTemperature}℃";
-            txtTime.Text = recordTime.ToString("HH:mm:ss");
-
-            for (int i = 0; i < data.Length - 1; i++)
+            try
             {
-                data[i] = data[i + 1];
-            }
-            data[data.Length - 1] = currentTemperature;
+                txtCurrentTemperature.Text = $"{currentTemperature}℃";
+                txtTime.Text = recordTime.ToString("HH:mm:ss");
 
-            chartMain.Series[0].Points.DataBindY(data);
+                for (int i = 0; i < data.Length - 1; i++)
+                {
+                    data[i] = data[i + 1];
+                }
+                data[data.Length - 1] = currentTemperature;
+
+                chartMain.Series[0].Points.DataBindY(data);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
     }

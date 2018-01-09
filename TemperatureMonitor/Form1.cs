@@ -21,6 +21,7 @@ namespace TemperatureMonitor
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
+            temperatureGraph1.DataCount = 500;
 
             dataHelper = new DataProcessHelper();
             //开启一个任务
