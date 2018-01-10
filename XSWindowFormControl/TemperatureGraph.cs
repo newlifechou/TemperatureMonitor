@@ -40,12 +40,20 @@ namespace XSWindowFormControl
             }
         }
 
+        public int IntervalTime
+        {
+            set
+            {
+                txtIntervalTime.Text = $"{value}ms";
+            }
+        }
+
         public void SetCurrentTempareture(int currentTemperature, DateTime recordTime)
         {
             try
             {
                 txtCurrentTemperature.Text = $"{currentTemperature}℃";
-                txtTime.Text = recordTime.ToString("HH:mm:ss");
+                txtTime.Text = recordTime.ToString("HH:mm:ss ff");
 
                 for (int i = 0; i < data.Length - 1; i++)
                 {

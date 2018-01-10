@@ -19,14 +19,21 @@ namespace TemperatureMonitor
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
 
+            IntervalTime = 100;
+
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph1.DataCount = 500;
+            temperatureGraph1.IntervalTime = IntervalTime;
+            temperatureGraph1.DataCount = 1000;
+
+
 
             dataHelper = new DataProcessHelper();
             //开启一个任务
             Task.Factory.StartNew(StartTemperature1);
         }
+
+        private readonly int IntervalTime;
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -46,7 +53,7 @@ namespace TemperatureMonitor
                     string readCmd = "010303200004";
                     operation.Write(readCmd);
 
-                    Thread.Sleep(2000);
+                    Thread.Sleep(IntervalTime);
 
                     string hexString = operation.Read();
                     string tempstr = hexString.Substring(6, 4);
@@ -70,7 +77,12 @@ namespace TemperatureMonitor
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print(ex.Message);
+                string exMsg = ex.Message;
+                System.Diagnostics.Debug.Print(exMsg);
+                this.Invoke(new Action(() =>
+                {
+                    txtStatus.Text = exMsg;
+                }));
             }
         }
 
