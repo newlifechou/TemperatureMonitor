@@ -19,11 +19,12 @@ namespace TemperatureMonitor
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
 
-            IntervalTime = 100;
+            intervalRead = 100;
+            intervalWrite = 500;
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph1.IntervalTime = IntervalTime;
+            temperatureGraph1.IntervalTime = intervalRead;
             temperatureGraph1.DataCount = 1000;
 
 
@@ -33,7 +34,8 @@ namespace TemperatureMonitor
             Task.Factory.StartNew(StartTemperature1);
         }
 
-        private readonly int IntervalTime;
+        private readonly int intervalRead;
+        private readonly int intervalWrite;
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -47,13 +49,14 @@ namespace TemperatureMonitor
             {
                 var operation = new SerialPortOperate("COM5");
                 //一直循环
+                int counter = 0;
                 while (true)
                 {
                     //读取温度传感器的温度指令（未校验）
                     string readCmd = "010303200004";
                     operation.Write(readCmd);
 
-                    Thread.Sleep(IntervalTime);
+                    Thread.Sleep(intervalRead);
 
                     string hexString = operation.Read();
                     string tempstr = hexString.Substring(6, 4);
@@ -70,9 +73,14 @@ namespace TemperatureMonitor
                         temperatureGraph1.SetCurrentTempareture(temperature1, d.CurrentTime);
                     }));
 
+                    counter++;
+                    if (counter*intervalRead % intervalWrite == 0)
+                    {
+                        //Write Log
+                        dataHelper.WriteData("A", temperature1);
+                        counter=0;
+                    }
 
-                    //Write Log
-                    dataHelper.WriteData("A", temperature1);
                 }
             }
             catch (Exception ex)

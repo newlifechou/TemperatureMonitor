@@ -30,6 +30,7 @@ namespace TestSerialPort
             port.Parity = Parity.None;
             port.DataBits = 8;
             port.StopBits = StopBits.One;
+            port.ReadTimeout = 100;
         }
 
         #region 写入缓冲区
