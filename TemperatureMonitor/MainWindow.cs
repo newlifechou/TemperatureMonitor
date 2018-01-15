@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace TemperatureMonitor
 {
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
-        public Form1()
+        public MainWindow()
         {
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
@@ -74,11 +74,11 @@ namespace TemperatureMonitor
                     }));
 
                     counter++;
-                    if (counter*intervalRead % intervalWrite == 0)
+                    if (counter * intervalRead % intervalWrite == 0)
                     {
                         //Write Log
                         dataHelper.WriteData("A", temperature1);
-                        counter=0;
+                        counter = 0;
                     }
 
                 }
@@ -99,6 +99,23 @@ namespace TemperatureMonitor
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("热电偶测温自动记录程序 designed by xs.zhou", "关于", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void 历史曲线ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryData h = new HistoryData();
+            h.Show();
+        }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Setting s = new Setting();
+            s.ShowDialog();
         }
     }
 }
