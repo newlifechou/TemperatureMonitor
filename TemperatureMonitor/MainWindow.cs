@@ -17,6 +17,8 @@ namespace TemperatureMonitor
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+
             this.FormClosing += Form1_FormClosing;
 
             intervalRead = 100;
