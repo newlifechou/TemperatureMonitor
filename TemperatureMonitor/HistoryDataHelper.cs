@@ -15,12 +15,14 @@ namespace TemperatureMonitor
             dataFolder = Path.Combine(Environment.CurrentDirectory, "Data");
         }
 
-        public List<int> GetSingleTempData(string filename)
+        public List<string> GetSingleTempData(string filename)
         {
+
+            Debug.Print(filename);
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            List<int> data = new List<int>();
+            List<string> data = new List<string>();
             string filePath = Path.Combine(dataFolder, filename);
             if (!File.Exists(filePath))
                 return null;
@@ -29,14 +31,13 @@ namespace TemperatureMonitor
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                        string dataPart = line.Substring(7, line.Length - 7);
-                        int dataInt = int.Parse(dataPart);
-                        data.Add(dataInt);
+                    data.Add(line);
                 }
             }
 
             sw.Stop();
             Debug.Print($"读取数据消耗时间{sw.ElapsedMilliseconds}");
+            Debug.Print($"共读取数据{data.Count}");
             return data;
 
         }
@@ -55,7 +56,8 @@ namespace TemperatureMonitor
                     DataModel d = new DataModel
                     {
                         FileName = file.Name,
-                        CreateTime = file.CreationTime
+                        CreateTime = file.CreationTime,
+                        FileSize = file.Length / 1024 / 1024
                     };
 
                     data.Add(d);

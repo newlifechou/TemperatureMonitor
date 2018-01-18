@@ -26,20 +26,24 @@ namespace TemperatureMonitor
             listBox1.DataSource = helper.GetDataFiles();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void listBox1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null)
                 return;
             string fileName = (listBox1.SelectedItem as DataModel).FileName;
-            Debug.Print(fileName);
 
-            List<int> data = new HistoryDataHelper().GetSingleTempData(fileName);
-            int[] dd = data.ToArray<int>();
+            List<string> data = new HistoryDataHelper().GetSingleTempData(fileName);
+
+            listBox2.BeginUpdate();
+            listBox2.Items.Clear();
+           
+            data.ForEach(i =>
+            {
+                listBox2.Items.Add(i);
+            });
+            listBox2.EndUpdate();
+
+            // int[] dd = data.ToArray<int>();
             //chart1.Series[0].Points.DataBindY(dd);
         }
     }

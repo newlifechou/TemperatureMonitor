@@ -15,7 +15,7 @@ namespace TemperatureMonitor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HistoryData());
+            Application.Run(new MainWindow());
         }
     }
 }
