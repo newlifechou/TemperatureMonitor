@@ -27,7 +27,7 @@ namespace TemperatureMonitor
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
             temperatureGraph1.IntervalTime = intervalRead;
-            temperatureGraph1.DataCount = 1000;
+            temperatureGraph1.DataCount = 2000;
 
 
 
@@ -49,13 +49,15 @@ namespace TemperatureMonitor
         {
             try
             {
-                var operation = new SerialPortOperate("COM5");
+                string portSetting = Properties.Settings.Default.SerialPortName;
+                var operation = new SerialPortOperate(portSetting);
+
                 //一直循环
                 int counter = 0;
                 while (true)
                 {
                     //读取温度传感器的温度指令（未校验）
-                    string readCmd = "010303200004";
+                    const string readCmd = "010303200004";
                     operation.Write(readCmd);
 
                     Thread.Sleep(intervalRead);
