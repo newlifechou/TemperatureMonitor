@@ -34,5 +34,41 @@ namespace TemperatureMonitor.Properties {
                 this["SerialPortName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int ReadInterval {
+            get {
+                return ((int)(this["ReadInterval"]));
+            }
+            set {
+                this["ReadInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        public int WriteInterval {
+            get {
+                return ((int)(this["WriteInterval"]));
+            }
+            set {
+                this["WriteInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OffSet {
+            get {
+                return ((int)(this["OffSet"]));
+            }
+            set {
+                this["OffSet"] = value;
+            }
+        }
     }
 }

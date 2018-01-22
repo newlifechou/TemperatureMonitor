@@ -19,7 +19,7 @@ namespace TemperatureMonitor
             try
             {
                 var now = DateTime.Now;
-                string filepath = Path.Combine(dir, $"{now.ToString("yyMMdd")}{machineName}.txt");
+                string filepath = Path.Combine(dir, $"{now.ToString("yyMMdd")}{machineName}.csv");
                 StreamWriter sw = new StreamWriter(filepath, true);
                 string line = $"{now.ToString("HHmmss")},{data}";
                 sw.WriteLine(line);

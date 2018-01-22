@@ -21,8 +21,10 @@ namespace TemperatureMonitor
 
             this.FormClosing += Form1_FormClosing;
 
-            intervalRead = 500;
-            intervalWrite = 2000;
+            intervalRead = Properties.Settings.Default.ReadInterval;
+            intervalWrite = Properties.Settings.Default.WriteInterval;
+            offSet = Properties.Settings.Default.OffSet;
+
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
@@ -38,6 +40,7 @@ namespace TemperatureMonitor
 
         private readonly int intervalRead;
         private readonly int intervalWrite;
+        private readonly int offSet;
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -47,17 +50,17 @@ namespace TemperatureMonitor
 
         public void StartTemperature1()
         {
-            try
-            {
-                string portSetting = Properties.Settings.Default.SerialPortName;
-                var operation = new SerialPortOperate(portSetting);
+            string portSetting = Properties.Settings.Default.SerialPortName;
+            var operation = new SerialPortOperate(portSetting);
 
-                //一直循环
-                int counter = 0;
-                while (true)
+            //一直循环
+            int counter = 0;
+            //读取温度传感器的温度指令（未校验）
+            const string readCmd = "010303200004";
+            while (true)
+            {
+                try
                 {
-                    //读取温度传感器的温度指令（未校验）
-                    const string readCmd = "010303200004";
                     operation.Write(readCmd);
 
                     Thread.Sleep(intervalRead);
@@ -66,7 +69,7 @@ namespace TemperatureMonitor
                     string tempstr = hexString.Substring(6, 4);
                     double temp = Convert.ToInt32(tempstr, 16);
                     THData d = new THData();
-                    d.Temperature = temp;
+                    d.Temperature = temp + offSet;
                     d.Humidity = 0;
                     //d.CurrentTime = DateTime.Now;
 
@@ -84,18 +87,20 @@ namespace TemperatureMonitor
                         dataHelper.WriteData("A", temperature1);
                         counter = 0;
                     }
-
                 }
-            }
-            catch (Exception ex)
-            {
-                string exMsg = ex.Message;
-                System.Diagnostics.Debug.Print(exMsg);
-                this.Invoke(new Action(() =>
+                catch (Exception ex)
                 {
-                    txtStatus.Text = exMsg;
-                }));
+                    string exMsg = ex.Message;
+                    System.Diagnostics.Debug.Print(exMsg);
+                    this.Invoke(new Action(() =>
+                    {
+                        txtStatus.Text = exMsg;
+                    }));
+                }
+
+
             }
+
         }
 
         private DataProcessHelper dataHelper;
