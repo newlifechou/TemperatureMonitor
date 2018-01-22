@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/packages/Tako.CRC.1.0.3.4
+/GraphTest/obj
+/TemperatureDataUpLoader/obj
+/TestSerialPortTests/obj

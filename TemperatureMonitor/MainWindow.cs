@@ -23,12 +23,12 @@ namespace TemperatureMonitor
 
             intervalRead = Properties.Settings.Default.ReadInterval;
             intervalWrite = Properties.Settings.Default.WriteInterval;
-            offSet = Properties.Settings.Default.OffSet;
+            offSet = Properties.Settings.Default.OffSet1;
 
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph1.IntervalTime = intervalRead;
+            //temperatureGraph1.IntervalTime = intervalRead;
             temperatureGraph1.DataCount = 2000;
 
 
@@ -137,5 +137,6 @@ namespace TemperatureMonitor
             //Setting s = new Setting();
             //s.ShowDialog();
         }
+
     }
 }

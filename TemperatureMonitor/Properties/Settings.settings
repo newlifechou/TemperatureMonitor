@@ -11,8 +11,29 @@
     <Setting Name="WriteInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10000</Value>
     </Setting>
-    <Setting Name="OffSet" Type="System.Int32" Scope="User">
+    <Setting Name="OffSet1" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ReadCommand1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">010303200004</Value>
+    </Setting>
+    <Setting Name="OffSet2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ReadCommand2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">010303200004</Value>
+    </Setting>
+    <Setting Name="OffSet3" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ReadCommand3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">010303200004</Value>
+    </Setting>
+    <Setting Name="OffSet4" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ReadCommand4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">010303200004</Value>
     </Setting>
   </Settings>
 </SettingsFile>

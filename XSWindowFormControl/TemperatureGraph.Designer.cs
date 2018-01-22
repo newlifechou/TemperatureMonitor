@@ -35,7 +35,6 @@
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtCurrentTemperature = new System.Windows.Forms.TextBox();
             this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtIntervalTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +56,7 @@
             this.chartMain.ChartAreas.Add(chartArea1);
             this.chartMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartMain.Location = new System.Drawing.Point(0, 0);
+            this.chartMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartMain.Name = "chartMain";
             series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
@@ -65,7 +65,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartMain.Series.Add(series1);
-            this.chartMain.Size = new System.Drawing.Size(938, 678);
+            this.chartMain.Size = new System.Drawing.Size(1055, 814);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chart1";
             // 
@@ -75,10 +75,11 @@
             this.txtMachine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMachine.Font = new System.Drawing.Font("宋体", 20F);
             this.txtMachine.ForeColor = System.Drawing.Color.White;
-            this.txtMachine.Location = new System.Drawing.Point(14, 15);
+            this.txtMachine.Location = new System.Drawing.Point(16, 18);
+            this.txtMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMachine.Name = "txtMachine";
             this.txtMachine.ReadOnly = true;
-            this.txtMachine.Size = new System.Drawing.Size(162, 46);
+            this.txtMachine.Size = new System.Drawing.Size(182, 53);
             this.txtMachine.TabIndex = 1;
             this.txtMachine.Text = "设备";
             this.txtMachine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -89,10 +90,11 @@
             this.txtPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPosition.Font = new System.Drawing.Font("宋体", 20F);
             this.txtPosition.ForeColor = System.Drawing.Color.White;
-            this.txtPosition.Location = new System.Drawing.Point(182, 15);
+            this.txtPosition.Location = new System.Drawing.Point(205, 18);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(162, 46);
+            this.txtPosition.Size = new System.Drawing.Size(182, 53);
             this.txtPosition.TabIndex = 1;
             this.txtPosition.Text = "底座";
             this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -103,10 +105,11 @@
             this.txtCurrentTemperature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCurrentTemperature.Font = new System.Drawing.Font("宋体", 20F);
             this.txtCurrentTemperature.ForeColor = System.Drawing.Color.White;
-            this.txtCurrentTemperature.Location = new System.Drawing.Point(740, 15);
+            this.txtCurrentTemperature.Location = new System.Drawing.Point(642, 18);
+            this.txtCurrentTemperature.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCurrentTemperature.Name = "txtCurrentTemperature";
             this.txtCurrentTemperature.ReadOnly = true;
-            this.txtCurrentTemperature.Size = new System.Drawing.Size(162, 46);
+            this.txtCurrentTemperature.Size = new System.Drawing.Size(182, 53);
             this.txtCurrentTemperature.TabIndex = 1;
             this.txtCurrentTemperature.Text = "温度";
             this.txtCurrentTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -117,41 +120,28 @@
             this.txtTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTime.Font = new System.Drawing.Font("宋体", 20F);
             this.txtTime.ForeColor = System.Drawing.Color.White;
-            this.txtTime.Location = new System.Drawing.Point(518, 15);
+            this.txtTime.Location = new System.Drawing.Point(393, 18);
+            this.txtTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTime.Name = "txtTime";
             this.txtTime.ReadOnly = true;
-            this.txtTime.Size = new System.Drawing.Size(216, 46);
+            this.txtTime.Size = new System.Drawing.Size(243, 53);
             this.txtTime.TabIndex = 1;
             this.txtTime.Text = "采样时间";
             this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtIntervalTime
-            // 
-            this.txtIntervalTime.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.txtIntervalTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIntervalTime.Font = new System.Drawing.Font("宋体", 20F);
-            this.txtIntervalTime.ForeColor = System.Drawing.Color.White;
-            this.txtIntervalTime.Location = new System.Drawing.Point(350, 15);
-            this.txtIntervalTime.Name = "txtIntervalTime";
-            this.txtIntervalTime.ReadOnly = true;
-            this.txtIntervalTime.Size = new System.Drawing.Size(162, 46);
-            this.txtIntervalTime.TabIndex = 1;
-            this.txtIntervalTime.Text = "采样间隔";
-            this.txtIntervalTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // TemperatureGraph
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtCurrentTemperature);
-            this.Controls.Add(this.txtIntervalTime);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtMachine);
             this.Controls.Add(this.chartMain);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TemperatureGraph";
-            this.Size = new System.Drawing.Size(938, 678);
+            this.Size = new System.Drawing.Size(1055, 814);
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +155,5 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtCurrentTemperature;
         private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.TextBox txtIntervalTime;
     }
 }

@@ -1,0 +1,7 @@
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\bin\Debug\XSWindowFormControl.dll
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\bin\Debug\XSWindowFormControl.pdb
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\obj\Debug\XSWindowFormControl.TemperatureGraph.resources
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\obj\Debug\XSWindowFormControl.csproj.GenerateResource.Cache
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\obj\Debug\XSWindowFormControl.csproj.CoreCompileInputs.cache
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\obj\Debug\XSWindowFormControl.dll
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\XSWindowFormControl\obj\Debug\XSWindowFormControl.pdb

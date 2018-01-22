@@ -12,7 +12,7 @@ namespace TemperatureMonitor.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -62,12 +62,96 @@ namespace TemperatureMonitor.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int OffSet {
+        public int OffSet1 {
             get {
-                return ((int)(this["OffSet"]));
+                return ((int)(this["OffSet1"]));
             }
             set {
-                this["OffSet"] = value;
+                this["OffSet1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("010303200004")]
+        public string ReadCommand1 {
+            get {
+                return ((string)(this["ReadCommand1"]));
+            }
+            set {
+                this["ReadCommand1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OffSet2 {
+            get {
+                return ((int)(this["OffSet2"]));
+            }
+            set {
+                this["OffSet2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("010303200004")]
+        public string ReadCommand2 {
+            get {
+                return ((string)(this["ReadCommand2"]));
+            }
+            set {
+                this["ReadCommand2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OffSet3 {
+            get {
+                return ((int)(this["OffSet3"]));
+            }
+            set {
+                this["OffSet3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("010303200004")]
+        public string ReadCommand3 {
+            get {
+                return ((string)(this["ReadCommand3"]));
+            }
+            set {
+                this["ReadCommand3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OffSet4 {
+            get {
+                return ((int)(this["OffSet4"]));
+            }
+            set {
+                this["OffSet4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("010303200004")]
+        public string ReadCommand4 {
+            get {
+                return ((string)(this["ReadCommand4"]));
+            }
+            set {
+                this["ReadCommand4"] = value;
             }
         }
     }

@@ -40,14 +40,6 @@ namespace XSWindowFormControl
             }
         }
 
-        public int IntervalTime
-        {
-            set
-            {
-                txtIntervalTime.Text = $"{value}ms";
-            }
-        }
-
         public void SetCurrentTempareture(int currentTemperature, DateTime recordTime)
         {
             try

@@ -1,0 +1,7 @@
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\bin\Debug\TestSerialPort.exe
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\bin\Debug\TestSerialPort.pdb
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\bin\Debug\Tako.CRC.dll
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\bin\Debug\Tako.CRC.xml
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\obj\Debug\TestSerialPort.csproj.CoreCompileInputs.cache
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\obj\Debug\TestSerialPort.exe
+C:\Users\XS\Documents\Projects\TemperatureMonitor.git\TestSerialPort\obj\Debug\TestSerialPort.pdb
