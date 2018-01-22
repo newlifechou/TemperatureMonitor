@@ -21,8 +21,8 @@ namespace TemperatureMonitor
 
             this.FormClosing += Form1_FormClosing;
 
-            intervalRead = 100;
-            intervalWrite = 500;
+            intervalRead = 500;
+            intervalWrite = 2000;
 
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
@@ -112,14 +112,25 @@ namespace TemperatureMonitor
 
         private void 历史曲线ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HistoryData h = new HistoryData();
-            h.Show();
+            string filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Data");
+            try
+            {
+                System.Diagnostics.Process.Start(filePath);
+                MessageBox.Show("可以使用Excel软件打开数据文件，自行筛选数据并绘图随意");
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = ex.Message;
+            }
+            //HistoryData h = new HistoryData();
+            //h.Show();
         }
 
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Setting s = new Setting();
-            s.ShowDialog();
+            MessageBox.Show("请直接修改根目录配置文件");
+            //Setting s = new Setting();
+            //s.ShowDialog();
         }
     }
 }

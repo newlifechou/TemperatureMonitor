@@ -7,5 +7,6 @@ namespace TemperatureMonitor
         public string FileName { get; set; }
         public DateTime CreateTime { get; set; }
         public long FileSize { get; set; }
+
     }
 }

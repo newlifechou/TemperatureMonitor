@@ -21,7 +21,7 @@ namespace TemperatureMonitor
                 var now = DateTime.Now;
                 string filepath = Path.Combine(dir, $"{now.ToString("yyMMdd")}{machineName}.txt");
                 StreamWriter sw = new StreamWriter(filepath, true);
-                string line = $"{now.ToString("HHmmss")}={data}";
+                string line = $"{now.ToString("HHmmss")},{data}";
                 sw.WriteLine(line);
                 sw.Close();
             }
