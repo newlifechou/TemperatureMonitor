@@ -26,7 +26,7 @@ namespace TestSerialPort
                 d.Temperature = temp;
                 d.Humidity = humi;
                 d.CurrentTime = DateTime.Now;
-
+                `
                 Console.WriteLine($"时间:{d.CurrentTime.ToString()} 温度:{d.Temperature}℃,湿度:{d.Humidity}%");
             }
         }
