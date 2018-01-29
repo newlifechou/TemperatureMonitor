@@ -10,7 +10,7 @@ namespace TestSerialPort
     {
         public void TestTemperatureAndHumidity()
         {
-            var operation = new SerialPortOperate("COM5");
+            var operation = new SerialPortOperate("COM3");
             while (true)
             {
                 //读取温湿度传感器的温度指令（未校验）

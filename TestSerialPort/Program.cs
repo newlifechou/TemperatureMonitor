@@ -12,8 +12,9 @@ namespace TestSerialPort
     {
         static void Main(string[] args)
         {
-            //RealTest test = new RealTest();
+            RealTest test = new RealTest();
             //test.TestTemperatureOnly();
+            test.TestTemperatureAndHumidity();
             Console.WriteLine("请运行本目录另外一个exe程序");
             Console.Read();
         }
