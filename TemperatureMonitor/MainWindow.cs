@@ -14,6 +14,8 @@ namespace TemperatureMonitor
 {
     public partial class MainWindow : Form
     {
+        private DataProcessHelper dataHelper;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,29 +27,29 @@ namespace TemperatureMonitor
             intervalWrite = Properties.Settings.Default.WriteInterval;
             offSet = Properties.Settings.Default.OffSet;
 
+            InitializeDevices();
 
+            //开启一个任务
+            Task newTask = new Task(StartTemperature1);
+            newTask.Start();
+        }
+
+        private void InitializeDevices()
+        {
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
             temperatureGraph1.IntervalTime = intervalRead;
-            temperatureGraph1.DataCount = 2000;
-
-
-
+            temperatureGraph1.DataCount = 1000;
             dataHelper = new DataProcessHelper();
-            //开启一个任务
-            Task.Factory.StartNew(StartTemperature1);
         }
 
         private readonly int intervalRead;
         private readonly int intervalWrite;
         private readonly int offSet;
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("你确定要关闭这个程序?", "确认?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            e.Cancel = (dr == DialogResult.No);
-        }
-
+        /// <summary>
+        /// 开始读写并处理数据
+        /// </summary>
         public void StartTemperature1()
         {
             string portSetting = Properties.Settings.Default.SerialPortName;
@@ -57,6 +59,7 @@ namespace TemperatureMonitor
             int counter = 0;
             //读取温度传感器的温度指令（未校验）
             const string readCmd = "010303200004";
+
             while (true)
             {
                 try
@@ -103,8 +106,6 @@ namespace TemperatureMonitor
 
         }
 
-        private DataProcessHelper dataHelper;
-
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -131,11 +132,10 @@ namespace TemperatureMonitor
             //h.Show();
         }
 
-        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("请直接修改根目录配置文件");
-            //Setting s = new Setting();
-            //s.ShowDialog();
+            DialogResult dr = MessageBox.Show("你确定要关闭这个程序?", "确认?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            e.Cancel = (dr == DialogResult.No);
         }
     }
 }
