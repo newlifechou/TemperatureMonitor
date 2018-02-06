@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="DataModel.cs" />
     <Compile Include="DataProcessHelper.cs" />
-    <Compile Include="ValueFilter.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

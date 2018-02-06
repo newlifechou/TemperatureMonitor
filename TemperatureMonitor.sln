@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "GraphTest\GraphTest.csproj", "{6B02D814-7F2F-43D4-97F3-80E11FB09D0E}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerialPortTests", "TestSerialPortTests\TestSerialPortTests.csproj", "{A638A2D4-C168-41D4-BC5E-04145A4D6841}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureDataUpLoader", "TemperatureDataUpLoader\TemperatureDataUpLoader.csproj", "{C4C9C2BD-122D-4ED2-B6FD-A0894803480B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveFilter", "WaveFilter\WaveFilter.csproj", "{280EEF06-A62D-460E-98E4-EE69588A24C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveFilterTest", "WaveFilterTest\WaveFilterTest.csproj", "{A41D8252-8673-4BEC-A9F3-5B59F006E879}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,8 +49,19 @@ Global
 		{C4C9C2BD-122D-4ED2-B6FD-A0894803480B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C9C2BD-122D-4ED2-B6FD-A0894803480B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C9C2BD-122D-4ED2-B6FD-A0894803480B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280EEF06-A62D-460E-98E4-EE69588A24C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280EEF06-A62D-460E-98E4-EE69588A24C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280EEF06-A62D-460E-98E4-EE69588A24C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280EEF06-A62D-460E-98E4-EE69588A24C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99EFC849-9052-411B-A452-435855AAD260}
 	EndGlobalSection
 EndGlobal
