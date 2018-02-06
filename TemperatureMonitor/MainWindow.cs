@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Threading;
 using TestSerialPort;
 using System.Threading.Tasks;
+using WaveFilter;
+
 
 namespace TemperatureMonitor
 {
@@ -38,7 +40,6 @@ namespace TemperatureMonitor
         {
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
-            temperatureGraph1.IntervalTime = intervalRead;
             temperatureGraph1.DataCount = 1000;
             dataHelper = new DataProcessHelper();
         }
@@ -60,19 +61,31 @@ namespace TemperatureMonitor
             //读取温度传感器的温度指令（未校验）
             const string readCmd = "010303200004";
 
+            ValueGroupFilter filter = new ValueGroupFilter();
+
             while (true)
             {
                 try
                 {
-                    operation.Write(readCmd);
+                    //读取一组数值
+                    int readCount = 10;
+                    List<double> readGroup = new List<double>();
+                    while (readCount > 0)
+                    {
+                        operation.Write(readCmd);
+                        Thread.Sleep(intervalRead);
+                        string hexString = operation.Read();
+                        string tempstr = hexString.Substring(6, 4);
+                        double temp = Convert.ToInt32(tempstr, 16);
 
-                    Thread.Sleep(intervalRead);
+                        readGroup.Add(temp);
+                        readCount--;
+                    }
 
-                    string hexString = operation.Read();
-                    string tempstr = hexString.Substring(6, 4);
-                    double temp = Convert.ToInt32(tempstr, 16);
+                    double okValue = filter.Process(readGroup.ToArray());
+
                     THData d = new THData();
-                    d.Temperature = temp + offSet;
+                    d.Temperature = okValue + offSet;
                     d.Humidity = 0;
                     //d.CurrentTime = DateTime.Now;
 

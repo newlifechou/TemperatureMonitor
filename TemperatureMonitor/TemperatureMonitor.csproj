@@ -101,6 +101,10 @@
       <Project>{1e6728ef-1995-46dc-8874-ad4e0dd520b4}</Project>
       <Name>TestSerialPort</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WaveFilter\WaveFilter.csproj">
+      <Project>{280eef06-a62d-460e-98e4-ee69588a24c2}</Project>
+      <Name>WaveFilter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XSWindowFormControl\XSWindowFormControl.csproj">
       <Project>{5411d79d-27c0-4334-8588-c30e5ba852cd}</Project>
       <Name>XSWindowFormControl</Name>
