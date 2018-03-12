@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "GraphTest\GraphTest.csproj", "{6B02D814-7F2F-43D4-97F3-80E11FB09D0E}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveFilter", "WaveFilter\WaveFilter.csproj", "{280EEF06-A62D-460E-98E4-EE69588A24C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveFilterTest", "WaveFilterTest\WaveFilterTest.csproj", "{A41D8252-8673-4BEC-A9F3-5B59F006E879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitorNew", "TemperatureMonitorNew\TemperatureMonitorNew.csproj", "{62A8922E-C790-4432-BF3C-ABED521D54B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A41D8252-8673-4BEC-A9F3-5B59F006E879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A8922E-C790-4432-BF3C-ABED521D54B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A8922E-C790-4432-BF3C-ABED521D54B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A8922E-C790-4432-BF3C-ABED521D54B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A8922E-C790-4432-BF3C-ABED521D54B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

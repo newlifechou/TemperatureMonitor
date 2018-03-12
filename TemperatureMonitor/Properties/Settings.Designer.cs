@@ -37,7 +37,7 @@ namespace TemperatureMonitor.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
         public int ReadInterval {
             get {
                 return ((int)(this["ReadInterval"]));
@@ -49,7 +49,7 @@ namespace TemperatureMonitor.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
         public int WriteInterval {
             get {
                 return ((int)(this["WriteInterval"]));

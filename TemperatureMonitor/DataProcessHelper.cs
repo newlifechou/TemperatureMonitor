@@ -8,26 +8,24 @@ namespace TemperatureMonitor
 {
     public class DataProcessHelper
     {
-        private string dir;
-        public DataProcessHelper()
+        private string filePath;
+        public DataProcessHelper(string path)
         {
-            dir = Path.Combine(Environment.CurrentDirectory, "Data");
+            filePath = path;
         }
 
-        public void WriteData(string machineName, int data = 0)
+        public void WriteData(int data = 0)
         {
             try
             {
                 var now = DateTime.Now;
-                string filepath = Path.Combine(dir, $"{now.ToString("yyMMdd")}{machineName}.csv");
-                StreamWriter sw = new StreamWriter(filepath, true);
+                StreamWriter sw = new StreamWriter(filePath, true);
                 string line = $"{now.ToString()},{data}";
                 sw.WriteLine(line);
                 sw.Close();
             }
             catch
             {
-                throw;
             }
         }
 

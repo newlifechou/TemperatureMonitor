@@ -10,13 +10,14 @@ using System.Threading;
 using TestSerialPort;
 using System.Threading.Tasks;
 using WaveFilter;
-
+using System.IO;
 
 namespace TemperatureMonitor
 {
     public partial class MainWindow : Form
     {
-        private DataProcessHelper dataHelper;
+        private DataProcessHelper dataHelperOutput;
+        private DataProcessHelper dataHelperRaw;
 
         public MainWindow()
         {
@@ -41,7 +42,11 @@ namespace TemperatureMonitor
             temperatureGraph1.MachineName = "设备A";
             temperatureGraph1.MonitorPosition = "底部";
             temperatureGraph1.DataCount = 1000;
-            dataHelper = new DataProcessHelper();
+            string dir = Path.Combine(Environment.CurrentDirectory, "Data");
+            string dataOutput = Path.Combine(dir, $"Output{DateTime.Now.ToString("yyyyMMddHHmmss")}.csv");
+            string dataRaw = Path.Combine(dir, $"Raw{DateTime.Now.ToString("yyyyMMddHHmmss")}.csv");
+            dataHelperOutput = new DataProcessHelper(dataOutput);
+            dataHelperRaw = new DataProcessHelper(dataRaw);
         }
 
         private readonly int intervalRead;
@@ -57,7 +62,7 @@ namespace TemperatureMonitor
             var operation = new SerialPortOperate(portSetting);
 
             //一直循环
-            int counter = 0;
+            //int counter = 0;
             //读取温度传感器的温度指令（未校验）
             const string readCmd = "010303200004";
 
@@ -76,18 +81,19 @@ namespace TemperatureMonitor
                         Thread.Sleep(intervalRead);
                         string hexString = operation.Read();
                         string tempstr = hexString.Substring(6, 4);
-                        double temp = Convert.ToInt32(tempstr, 16);
+                        int temp = Convert.ToInt32(tempstr, 16);
+
+                        dataHelperRaw.WriteData(temp);
 
                         readGroup.Add(temp);
                         readCount--;
                     }
 
-                    double okValue = filter.Process(readGroup.ToArray());
+                    double okValue = filter.Process2(readGroup.ToArray());
 
                     THData d = new THData();
                     d.Temperature = okValue + offSet;
                     d.Humidity = 0;
-                    //d.CurrentTime = DateTime.Now;
 
                     int temperature1 = (int)d.Temperature;
                     //update ui
@@ -95,14 +101,14 @@ namespace TemperatureMonitor
                     {
                         temperatureGraph1.SetCurrentTempareture(temperature1, d.CurrentTime);
                     }));
-
-                    counter++;
-                    if (counter * intervalRead % intervalWrite == 0)
-                    {
-                        //Write Log
-                        dataHelper.WriteData("A", temperature1);
-                        counter = 0;
-                    }
+                    dataHelperOutput.WriteData(temperature1);
+                    //counter++;
+                    //if (counter * intervalRead % intervalWrite == 0)
+                    //{
+                    //    //Write Log
+                    //    dataHelperOutput.WriteData(temperature1);
+                    //    counter = 0;
+                    //}
                 }
                 catch (Exception ex)
                 {
@@ -135,7 +141,7 @@ namespace TemperatureMonitor
             try
             {
                 System.Diagnostics.Process.Start(filePath);
-                MessageBox.Show("可以使用Excel软件打开数据文件，自行筛选数据并绘图随意");
+                //MessageBox.Show("可以使用Excel软件打开数据文件，自行筛选数据并绘图随意");
             }
             catch (Exception ex)
             {

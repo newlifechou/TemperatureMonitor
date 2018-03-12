@@ -6,10 +6,10 @@
       <Value Profile="(Default)">COM5</Value>
     </Setting>
     <Setting Name="ReadInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1000</Value>
+      <Value Profile="(Default)">500</Value>
     </Setting>
     <Setting Name="WriteInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">60000</Value>
+      <Value Profile="(Default)">1000</Value>
     </Setting>
     <Setting Name="OffSet" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
